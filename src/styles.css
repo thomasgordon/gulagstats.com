@@ -1,3 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .text-colouring {
+    @apply text-text-colour dark:text-text-colour-dark
+  }
+  .h1-sizing {
+    @apply font-bold 2xl:text-9xl xl:text-9xl lg:text-8xl md:text-7xl sm:text-4xl xs:text-3xl;
+  }
+  .h2-sizing {
+    @apply font-medium 2xl:text-8xl xl:text-6xl lg:text-4xl md:text-3xl sm:text-xl;
+  }
+  .h3-sizing {
+    @apply font-medium 2xl:text-6xl xl:text-4xl lg:text-2xl md:text-xl sm:text-lg;
+  }
+  .p-sizing {
+    @apply 2xl:text-3xl xl:text-2xl lg:text-xl md:text-lg sm:text-sm
+  }
+
+
+  .h1-padding {
+    @apply 2xl:px-16 xl:px-12 lg:px-10 
+  }
+  .h2-padding {
+    @apply 2xl:px-12 xl:px-8 lg:px-6 
+  }
+  .h3-padding {
+    @apply 2xl:px-10 xl:px-6 lg:px-4 
+  }
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+* {
+  transition: all 0.3s ease;
+}
