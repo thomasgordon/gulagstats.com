@@ -5,13 +5,10 @@ module.exports = {
   ],
   theme: {
     colors: {
-      "background-colour": "#EDEAE2",
-      "text-colour": "#383732",
-      "accent-colour": "#EE92C2",
-      // Dark mode colours
-      "background-colour-dark": "#383732",
-      "text-colour-dark": "#EDEAE2",
-      "accent-colour-dark": "#EE92C2",
+      "background-colour": "#383732",
+      "text-colour": "#EDEAE2",
+      "accent-colour-green": "#09E85E",
+      "accent-colour-pink": "#E27396",
     },
     screens: {
       xs: "320px", // Extra small devices (phones)
@@ -47,6 +44,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('tailwindcss-primeui')]
 }
 
