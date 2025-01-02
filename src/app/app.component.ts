@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 import { CommonModule } from '@angular/common';
 
+interface ResponseData {
+  messageCount: number;
+}
 
 @Component({
   selector: 'app-root',
@@ -10,13 +13,14 @@ import { CommonModule } from '@angular/common';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit {
-  data: any[] = [];
+  data: number = 0;
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
-    this.dataService.getData().subscribe((response) => {
-      this.data = response;
+    this.dataService.getData().subscribe((response: ResponseData) => {
+      console.log(response);
+      this.data = response.messageCount;
     });
   }
 }
