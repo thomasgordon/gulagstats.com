@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from './data.service';
 import { CommonModule } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
 
 interface ResponseData {
   messageCount: number;
@@ -15,10 +15,12 @@ interface ResponseData {
 export class AppComponent implements OnInit {
   data: number = 0;
 
-  constructor(private dataService: DataService) {}
+  constructor(private http: HttpClient) {}
+
+  private apiUrl = 'http://api.gulagstats.com/api/message_count';
 
   ngOnInit(): void {
-    this.dataService.getData().subscribe((response: ResponseData) => {
+    this.http.get<ResponseData>(this.apiUrl).subscribe((response: ResponseData) => {
       console.log(response);
       this.data = response.messageCount;
     });
