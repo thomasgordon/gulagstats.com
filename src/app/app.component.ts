@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.http.get<ResponseData>(this.apiUrl).subscribe({
+      this.http.get<ResponseData>(this.apiUrl, {
+        headers: { 'Cache-Control': 'no-cache', 'Pragma': 'no-cache' }
+      }).subscribe({
         next: (response) => {
           this.data = response.messageCount;
         },
