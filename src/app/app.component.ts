@@ -20,9 +20,12 @@ export class AppComponent implements OnInit {
   private apiUrl = 'http://api.gulagstats.com/api/message_count';
 
   ngOnInit(): void {
-    this.http.get<ResponseData>(this.apiUrl).subscribe((response: ResponseData) => {
-      console.log(response);
-      this.data = response.messageCount;
+    this.http.get<ResponseData>(this.apiUrl).subscribe({
+      next: (response: ResponseData) => {
+        console.log('Success:', response);
+        this.data = response.messageCount;
+      },
+      error: (error) => console.error('Error:', error)
     });
   }
 }
