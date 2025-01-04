@@ -43,6 +43,7 @@ Thumbs.db
 
 # Custom
 api_server.js
+api_server_https.js
 .env
 names.json
 channels.json
