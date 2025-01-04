@@ -42,5 +42,7 @@ testem.log
 Thumbs.db
 
 # Custom
-test-server.js
+api_server.js
 .env
+names.json
+channels.json
