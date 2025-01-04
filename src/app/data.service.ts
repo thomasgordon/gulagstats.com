@@ -18,8 +18,8 @@ interface Messager {
   providedIn: 'root',
 })
 export class DataService {
-  private messageCountUrl = 'http://api.gulagstats.com/api/message_count';
-  private mostMessengersUrl = 'http://api.gulagstats.com/api/top_three_messagers';
+  private messageCountUrl = 'https://api.gulagstats.com/api/message_count';
+  private mostMessengersUrl = 'https://api.gulagstats.com/api/top_three_messagers';
 
   constructor(private http: HttpClient) {}
 
