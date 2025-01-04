@@ -1,11 +1,11 @@
 <div>
-  <h1 class="text-text-colour h1-sizing h1-padding flex justify-center align-middle">
+  <h1 class="text-text-colour h2-sizing h2-padding flex justify-start align-middle">
     There is nothing here yet except the number of messages sent since I started tracking: {{ messageCount }}
   </h1>
-  <h1 class="text-text-colour h2-sizing h2-padding flex justify-center align-middle">
+  <h1 class="text-text-colour h2-sizing h2-padding flex justify-start align-middle">
     And here are the top 3 yappers:
   </h1>
-  <ul class="text-text-colour h3-sizing flex justify-center align-middle">
+  <ul class="text-text-colour h3-sizing flex justify-between align-middle">
     <li *ngFor="let messager of topThreeMessagers">
       {{ messager.user }}: {{ messager.messages }} messages
     </li>
