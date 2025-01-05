@@ -65,12 +65,6 @@ export class DataService {
     });
   }
 
-  getMostMentioned(): Observable<MentionedUser[]> {
-    return this.http.get<MentionedUser[]>(`${this.baseUrlMessages}/most_mentioned`, {
-      headers: this.getHeaders(),
-    });
-  }
-
   getUserStats(userId: string): Observable<UserStats> {
     return this.http.get<UserStats>(`${this.baseUrlMessages}/user/${userId}`, {
       headers: this.getHeaders(),

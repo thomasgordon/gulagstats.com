@@ -15,14 +15,12 @@ export class AppComponent implements OnInit {
   messageCount: string = '0';
   topMessagers: { user: string; messages: string }[] = [];
   topChannels: { channel: string; messages: string }[] = [];
-  mostMentioned: { user: string; mentions: string }[] = [];
   peakHours: { hour: number; messageCount: string; formattedHour: string }[] = [];
   
   loading = {
     messageCount: true,
     topMessagers: true,
     topChannels: true,
-    mostMentioned: true,
     peakHours: true,
   };
 
