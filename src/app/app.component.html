@@ -50,18 +50,5 @@
         </div>
       </div>
     </div>
-
-    <!-- Peak Hours -->
-    <div class="h3-padding">
-      <h2 class="text-text-colour h2-sizing mb-4">Peak Hours</h2>
-      <div *ngIf="loading.peakHours" class="text-text-colour h3-sizing">Loading...</div>
-      <div *ngIf="!loading.peakHours" class="space-y-4">
-        <div *ngFor="let hour of peakHours" 
-             class="flex justify-between items-center border-2 border-accent-colour-green p-4 rounded-lg">
-          <span class="text-text-colour h3-sizing">{{hour.formattedHour}}</span>
-          <span class="text-accent-colour-pink h3-sizing">{{hour.messageCount}}</span>
-        </div>
-      </div>
-    </div>
   </div>
 </div>

@@ -68,17 +68,6 @@ export class AppComponent implements OnInit {
       },
     });
 
-    this.dataService.getMostMentioned().subscribe({
-      next: (response) => {
-        this.mostMentioned = response;
-        this.loading.mostMentioned = false;
-      },
-      error: (error) => {
-        console.error('Error fetching most mentioned:', error);
-        this.loading.mostMentioned = false;
-      },
-    });
-
     this.dataService.getPeakHours().subscribe({
       next: (response) => {
         this.peakHours = response;
