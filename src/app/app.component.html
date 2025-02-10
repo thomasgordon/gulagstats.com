@@ -1,4 +1,5 @@
 <div class="min-h-dvh bg-background-colour">
+
   <!-- Total Messages -->
   <div class="h2-padding">
     <h1 class="text-text-colour h2-sizing">
@@ -49,5 +50,20 @@
         </div>
       </div>
     </div>
+
+    <!-- Most Mentioned -->
+    <div class="h3-padding">
+      <h2 class="text-text-colour h2-sizing mb-4">Most Mentioned</h2>
+      <div *ngIf="loading.mostMentioned" class="text-text-colour h3-sizing">Loading...</div>
+      <div *ngIf="!loading.mostMentioned" class="space-y-4">
+        <div *ngFor="let user of mostMentioned" 
+             class="flex justify-between items-center border-2 border-accent-colour-green p-4 rounded-lg">
+          <span class="text-text-colour h3-sizing">{{user.user}}</span>
+          <span class="text-accent-colour-pink h3-sizing">{{user.mentions}}</span>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </div>

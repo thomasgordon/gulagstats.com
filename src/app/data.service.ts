@@ -76,4 +76,10 @@ export class DataService {
       headers: this.getHeaders(),
     });
   }
+
+  getMostMentioned(): Observable<MentionedUser[]> {
+    return this.http.get<MentionedUser[]>(`${this.baseUrlMessages}/most_mentioned`, {
+      headers: this.getHeaders(),
+    });
+  }
 }

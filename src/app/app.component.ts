@@ -16,12 +16,14 @@ export class AppComponent implements OnInit {
   topMessagers: { user: string; messages: string }[] = [];
   topChannels: { channel: string; messages: string }[] = [];
   peakHours: { hour: number; messageCount: string; formattedHour: string }[] = [];
+  mostMentioned :{ user: string; mentions: string; }[] = [];
   
   loading = {
     messageCount: true,
     topMessagers: true,
     topChannels: true,
     peakHours: true,
+    mostMentioned: true,
   };
 
   constructor(private dataService: DataService) {}
@@ -74,6 +76,17 @@ export class AppComponent implements OnInit {
       error: (error) => {
         console.error('Error fetching peak hours:', error);
         this.loading.peakHours = false;
+      },
+    });
+
+    this.dataService.getMostMentioned().subscribe({
+      next: (response) => {
+        this.mostMentioned = response;
+        this.loading.mostMentioned = false;
+      },
+      error: (error) => {
+        console.error('Error fetching most mentioned:', error);
+        this.loading.mostMentioned = false;
       },
     });
   }
