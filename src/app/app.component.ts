@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   
   messageCount: string = '0';
   topMessagers: { user: string; messages: string }[] = [];
-  topChannels: { channel: string; messages: string }[] = [];
+  topChannels: { channel: string; messageCount: string }[] = [];
   peakHours: { hour: number; messageCount: string; formattedHour: string }[] = [];
   mostMentioned :{ user: string; mentions: string; }[] = [];
   

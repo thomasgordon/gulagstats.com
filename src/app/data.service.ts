@@ -13,7 +13,7 @@ interface Messager {
 
 interface Channel {
   channel: string;
-  messages: string;
+  messageCount: string;
 }
 
 interface MentionedUser {
